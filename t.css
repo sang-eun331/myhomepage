@@ -97,6 +97,78 @@ nav a {
   transition: transform 0.2s ease; /* 애니메이션 속도 제어 */
 }
 
+/* 기존 공통 스타일 유지... (header, nav 등) */
+
+/* Contact 전용 스타일 */
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 20px; /* 전체 폼을 둥글게 */
+  border: 1px solid #D1D9E0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column; /* 위아래 배치 */
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #34495E;
+  font-size: 0.9rem;
+}
+
+/* 입력창 공통 스타일 */
+input[type="text"], .letter-style {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #F0F4F8; /* 메뉴바와 비슷한 연한 푸른색 */
+  background-color: #F0F4F8; /* 배경색도 메뉴바와 통일 */
+  border-radius: 12px; /* 입력창도 둥글게 */
+  font-family: 'Noto Sans KR', sans-serif;
+  box-sizing: border-box;
+  outline: none;
+  transition: border 0.3s;
+}
+
+input[type="text"]:focus, .letter-style:focus {
+  border: 2px solid #3498DB; /* 포커스 시 하늘색 포인트 */
+}
+
+/* 편지지 모양 메시지 창 */
+.letter-style {
+  line-height: 2; /* 줄 간격을 넓게 */
+  background-image: linear-gradient(#D1D9E0 1px, transparent 1px); /* 가로선 효과 */
+  background-size: 100% 2em; /* 줄 간격에 맞춰 선 배치 */
+  resize: none; /* 크기 조절 비활성화로 모양 유지 */
+}
+
+/* 전송 버튼 */
+button[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  background-color: #3498DB;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #2980B9;
+}
+
 nav a:hover {
   transform: scale(1.15); /* 마우스 올렸을 때 1.15배 커짐 */
   color: #3498DB; /* 글자색도 함께 변하면 더 명확합니다 */
