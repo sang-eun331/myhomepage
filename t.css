@@ -91,3 +91,13 @@ footer {
   font-size: 0.85rem;
   color: #95A5A6;
 }
+
+nav a {
+  display: inline-block; /* 크기 변화를 자연스럽게 만들기 위해 필요 */
+  transition: transform 0.2s ease; /* 애니메이션 속도 제어 */
+}
+
+nav a:hover {
+  transform: scale(1.15); /* 마우스 올렸을 때 1.15배 커짐 */
+  color: #3498DB; /* 글자색도 함께 변하면 더 명확합니다 */
+}
