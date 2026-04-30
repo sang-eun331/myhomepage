@@ -2,67 +2,73 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Noto Sans KR', sans-serif; /* 단정하고 날카로운 서체 */
+  font-family: 'Noto Sans KR', sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: #2C3E50; /* 짙은 네이비 그레이로 가독성 향상 */
   background-color: #fcfcfc;
 }
 
-/* 헤더: 눈이 편안한 오렌지 톤 */
+/* 헤더: 차분하고 맑은 하늘색 */
 header {
-  background-color: #E67E22; /* 채도를 살짝 낮춘 주황색 */
+  background-color: #3498DB; /* 신뢰감을 주는 Sky Blue */
   color: white;
-  padding: 3rem 1rem;
+  padding: 3.5rem 1rem;
   text-align: center;
-  border-bottom: 4px solid #D35400; /* 더 짙은 색으로 날카로운 구분선 */
+  border-bottom: 3px solid #2980B9; /* 하단에 짙은 라인을 주어 경계 명확화 */
 }
 
 header h1 {
   margin: 0;
   font-size: 2.5rem;
-  letter-spacing: -1px; /* 글자 간격을 좁혀 더 날카로운 인상 */
+  letter-spacing: -1.5px; /* 더 날카로운 느낌을 위해 자간 조정 */
   font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 .subtitle {
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
   font-weight: 400;
-  opacity: 0.9;
+  font-size: 1.1rem;
+  opacity: 0.95;
 }
 
-/* 네비게이션 */
+/* 메뉴바: 살짝 푸른끼가 도는 흰색 */
 nav {
-  background: #2c3e50;
+  background: #F0F4F8; /* Alice Blue 계열의 차가운 흰색 */
   display: flex;
   justify-content: center;
-  padding: 0.8rem;
+  padding: 1rem;
+  border-bottom: 1px solid #D1D9E0; /* 얇고 날카로운 구분선 */
 }
 
 nav a {
-  color: #ecf0f1;
+  color: #34495E; /* 어두운 청회색 */
   text-decoration: none;
-  margin: 0 15px;
+  margin: 0 20px;
   font-size: 0.9rem;
   font-weight: 700;
-  transition: color 0.3s;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
 }
 
 nav a:hover {
-  color: #E67E22;
+  color: #3498DB; /* 호버 시 헤더 색상과 통일 */
+  transform: translateY(-1px);
 }
 
-/* 컨테이너 및 섹션 */
+/* 메인 컨텐츠 */
 .container {
   max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
+  margin: 50px auto;
+  padding: 0 25px;
 }
 
 h2 {
-  border-left: 5px solid #E67E22; /* 포인트 컬러로 단정한 직선 강조 */
+  border-left: 6px solid #3498DB; /* 주황색 대신 하늘색 포인트 */
   padding-left: 15px;
-  margin-bottom: 20px;
-  font-size: 1.5rem;
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+  color: #2C3E50;
 }
 
 ul {
@@ -72,15 +78,16 @@ ul {
 
 li {
   background: #fff;
-  margin-bottom: 10px;
-  padding: 15px;
-  border: 1px solid #eee; /* 깔끔한 박스 라인 */
+  margin-bottom: 12px;
+  padding: 18px;
+  border: 1px solid #E1E8ED; /* 연한 블루그레이 테두리 */
+  border-radius: 2px; /* 아주 약간만 깎아서 단정한 느낌 유지 */
 }
 
 /* 푸터 */
 footer {
   text-align: center;
-  padding: 2rem;
-  font-size: 0.8rem;
-  color: #888;
+  padding: 3rem 1rem;
+  font-size: 0.85rem;
+  color: #95A5A6;
 }
