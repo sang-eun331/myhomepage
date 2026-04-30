@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>인터넷활용 실습 템플릿</title>
-  <link rel="stylesheet" href="t.css">
+  <title>상은 | Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
   <h1>상은</h1>
-  <p class="subtitle">한 줄 소개: (여기에 추가)</p>
+  <p class="subtitle">한 줄 소개:</p>
 </header>
 <nav>
   <a href="index.html">Home</a>
@@ -20,23 +21,28 @@
 <main class="container">
 <section>
   <h2>Contact</h2>
-  <ul>
-    <li>이메일: pse021111@kw.ac.kr)</li>
-    <li>GitHub: (여기에 추가)</li>
-    <li>기타 링크(블로그/노션 등): (여기에 추가)</li>
+  <ul class="contact-info">
+    <li><strong>이메일:</strong> pse021111@kw.ac.kr</li>
+    <li><strong>GitHub:</strong> github.com/상은</li>
   </ul>
-  <!-- 아래는 정말 기본 예시 폼입니다. JS 없이도 동작하지 않아도 되며, 형태만 제공합니다. -->
+
   <form class="contact-form" onsubmit="return false;">
-    <label>상은</label>
-    <input type="text" placeholder="이름을 입력하세요">
-    <label>메시지</label>
-    <textarea rows="4" placeholder="메시지를 입력하세요"></textarea>
-    <button type="submit">보내기 (동작X, 형태만)</button>
+    <div class="form-group">
+      <label>성함</label>
+      <input type="text" placeholder="이름을 입력하세요">
+    </div>
+    
+    <div class="form-group">
+      <label>메시지</label>
+      <textarea rows="8" placeholder="전하고 싶은 메시지를 적어주세요..." class="letter-style"></textarea>
+    </div>
+    
+    <button type="submit">메시지 보내기</button>
   </form>
 </section>
 </main>
 <footer>
-  <small>&copy; <span id="year"></span> 이름: (여기에 추가)</small>
+  <small>&copy; <span id="year"></span> 상은. All rights reserved.</small>
 </footer>
 <script src="script.js"></script>
 </body>
