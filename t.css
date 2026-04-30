@@ -1,0 +1,86 @@
+/* 기본 설정 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif; /* 단정하고 날카로운 서체 */
+  line-height: 1.6;
+  color: #333;
+  background-color: #fcfcfc;
+}
+
+/* 헤더: 눈이 편안한 오렌지 톤 */
+header {
+  background-color: #E67E22; /* 채도를 살짝 낮춘 주황색 */
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+  border-bottom: 4px solid #D35400; /* 더 짙은 색으로 날카로운 구분선 */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: -1px; /* 글자 간격을 좁혀 더 날카로운 인상 */
+  font-weight: 700;
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* 네비게이션 */
+nav {
+  background: #2c3e50;
+  display: flex;
+  justify-content: center;
+  padding: 0.8rem;
+}
+
+nav a {
+  color: #ecf0f1;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #E67E22;
+}
+
+/* 컨테이너 및 섹션 */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+h2 {
+  border-left: 5px solid #E67E22; /* 포인트 컬러로 단정한 직선 강조 */
+  padding-left: 15px;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 15px;
+  border: 1px solid #eee; /* 깔끔한 박스 라인 */
+}
+
+/* 푸터 */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.8rem;
+  color: #888;
+}
