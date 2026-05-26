@@ -5,18 +5,91 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>인터넷활용 실습 템플릿</title>
   <link rel="stylesheet" href="t.css">
+  
+ <style>
+    #target {
+      display: inline-block;
+      padding: 10px 20px;
+      border: 2px solid #ddd;
+      border-radius: 8px
+      margin: 10px 0;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-container {
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+    
+    button {
+      padding: 6px 12px;
+      font-size: 13px;
+      margin: 3px;
+      cursor: pointer;
+      background-color: #f8f9fa;
+      border: 1px solid #dbdbdb;
+      border-radius: 4px;
+      color: #4a4a4a;
+      transition: all 0.2s;
+    }
+    
+    button:hover {
+      background-color: #b5c0d0;
+      border-color: #a5b0c0;
+      color: #333;
+    }
+  </style>
+
+  <script>
+    function changeColor() {
+        var obj = document.getElementById("target");
+        obj.style.color = "#1e3a8a"; 
+    }
+
+    function changeSize() {
+        var obj = document.getElementById("target");
+        obj.style.fontSize = "24px";
+    }
+
+    function changeBackground() {
+        var obj = document.getElementById("target");
+        obj.style.backgroundColor = "#e0e7ff"; 
+    }
+
+    function toggleVisibility() {
+        var obj = document.getElementById("target");
+        if (obj.style.visibility === "hidden") {
+            obj.style.visibility = "visible";
+        } else {
+            obj.style.visibility = "hidden";
+        }
+    }
+  </script>
 </head>
 <body>
+
 <header>
-  <h1>상은</h1>
+  <!-- 이름을 타겟(id="target")으로 지정하여 기능이 동작하도록 수정했습니다 -->
+  <h1 id="target">상은</h1>
+  
+  <!-- 이름 바로 아래에 제어 버튼 배치 -->
+  <div class="btn-container">
+    <button onclick="changeColor()">글자색 변경</button>
+    <button onclick="changeSize()">크게 보기</button>
+    <button onclick="changeBackground()">배경 강조</button>
+    <button onclick="toggleVisibility()">숨기기/보이기</button>
+  </div>
+  
   <p class="subtitle">한 줄 소개: (여기에 추가)</p>
 </header>
+
 <nav>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="portfolio.html">Portfolio</a>
   <a href="contact.html">Contact</a>
 </nav>
+
 <main class="container">
 <section>
   <h2>홈</h2>
@@ -28,9 +101,11 @@
   </ul>
 </section>
 </main>
+
 <footer>
-  <small>&copy; <span id="year"></span> 이름: (여기에 추가)</small>
+  <small>&copy; <span id="year"></span> 이름: 상은</small>
 </footer>
+
 <script src="script.js"></script>
 </body>
 </html>
