@@ -5,23 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>인터넷활용 실습 템플릿</title>
   <link rel="stylesheet" href="t.css">
+  
+  <style>
+    #target {
+      display: inline-block;
+      padding: 10px 20px;
+      border: 2px solid #ccc;
+      margin: 10px 0;
+      transition: all 0.3s;
+    }
+    
+    .btn-container {
+      margin-top: 10px;
+    }
+    
+    button {
+      padding: 8px 12px;
+      font-size: 14px;
+      margin: 3px;
+      cursor: pointer;
+      background-color: #eee;
+      border: 1px solid #999;
+      border-radius: 5px;
+      transition: background-color 0.2s;
+    }
+    
+    button:hover {
+      background-color: #ddd;
+    }
+  </style>
+
+  <script>
+    function changeColor() {
+        var obj = document.getElementById("target");
+        obj.style.color = "red";
+    }
+
+    function changeSize() {
+        var obj = document.getElementById("target");
+        obj.style.fontSize = "32px";
+    }
+
+    function changeBackground() {
+        var obj = document.getElementById("target");
+        obj.style.backgroundColor = "yellow";
+    }
+
+    function toggleVisibility() {
+        var obj = document.getElementById("target");
+        
+        if (obj.style.visibility === "hidden") {
+            obj.style.visibility = "visible";
+        } else {
+            obj.style.visibility = "hidden";
+        }
+    }
+  </script>
 </head>
 <body>
+
 <header>
-  <h1>상은</h1>
+  <h1 id="target">상은</h1>
+  
+  <div class="btn-container">
+    <button onclick="changeColor()">글자색 변경</button>
+    <button onclick="changeSize()">크게 보기</button>
+    <button onclick="changeBackground()">배경 강조</button>
+    <button onclick="toggleVisibility()">숨기기/보이기</button>
+  </div>
+  
   <p class="subtitle">한 줄 소개: 광운대학생</p>
 </header>
+
 <nav>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="portfolio.html">Portfolio</a>
   <a href="contact.html">Contact</a>
 </nav>
+
 <main class="container">
 <section>
   <h2>About Me</h2>
   <p>간단 소개: (여기에 추가)</p>
-  <h3>학력</h3></h3>
+  <h3>학력</h3>
   <ul>
     <li>여의도여자고등학교 졸</li>
     <li>광운대학교 재학</li>
@@ -33,9 +100,11 @@
   </ul>
 </section>
 </main>
+
 <footer>
-  <small>&copy; <span id="year"></span> 이름: (여기에 추가)</small>
+  <small>&copy; <span id="year"></span> 이름: 상은</small>
 </footer>
+
 <script src="script.js"></script>
 </body>
 </html>
