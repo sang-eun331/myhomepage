@@ -40,20 +40,32 @@
     }
   </style>
 
-  <script>
+<script>
     function changeColor() {
         var obj = document.getElementById("target");
-        obj.style.color = "#1e3a8a"; 
+        if (obj.style.color === "rgb(30, 58, 138)" || obj.style.color === "navy") {
+            obj.style.color = "";
+        } else {
+            obj.style.color = "#1e3a8a";
+        }
     }
 
     function changeSize() {
         var obj = document.getElementById("target");
-        obj.style.fontSize = "24px";
+        if (obj.style.fontSize === "24px") {
+            obj.style.fontSize = "";
+        } else {
+            obj.style.fontSize = "24px";
+        }
     }
 
     function changeBackground() {
         var obj = document.getElementById("target");
-        obj.style.backgroundColor = "#e0e7ff"; 
+        if (obj.style.backgroundColor === "rgb(224, 231, 255)" || obj.style.backgroundColor === "rgb(224, 231, 255)") {
+            obj.style.backgroundColor = "";
+        } else {
+            obj.style.backgroundColor = "#e0e7ff";
+        }
     }
 
     function toggleVisibility() {
@@ -69,10 +81,8 @@
 <body>
 
 <header>
-  <!-- 이름을 타겟(id="target")으로 지정하여 기능이 동작하도록 수정했습니다 -->
   <h1 id="target">상은</h1>
   
-  <!-- 이름 바로 아래에 제어 버튼 배치 -->
   <div class="btn-container">
     <button onclick="changeColor()">글자색 변경</button>
     <button onclick="changeSize()">크게 보기</button>
