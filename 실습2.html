@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자동차 장애물 피하기 실습</title>
+    <style>
+        /* 게임 화면 및 배경 */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: 'Malgun Gothic', sans-serif;
+            overflow: hidden;
+            /* 스크롤바 방지 */
+        }
+
+        .info-panel {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-size: 14px;
+            z-index: 100;
+        }
+
+        /* 🚗 자동차 스타일 */
+        #car {
+            position: absolute;
+            width: 50px;
+            height: 30px;
+            background-color: #e74c3c;
+            /* 빨간색 자동차 */
+            border-radius: 6px;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            transition: transform 0.1s;
+            /* 부드러운 움직임 효과 */
+            z-index: 10;
+        }
+
+        /* 바퀴 표현 */
+        #car::before,
+        #car::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 6px;
+            background: #333;
+        }
+
+        #car::before {
+            top: -5px;
+            left: 8px;
+            box-shadow: 24px 0 #333;
+        }
+
+        #car::after {
+            bottom: -5px;
+            left: 8px;
+            box-shadow: 24px 0 #333;
+        }
+
+        /* 🌳 🏢 장애물 공통 스타일 */
+        .obstacle {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+        }
+
+        /* 나무 스타일 */
+        .tree {
+            background-color: #2ecc71;
+            border: 3px solid #27ae60;
+        }
+
+        /* 건물 스타일 */
+        .building {
+            background-color: #95a5a6;
+            border: 3px solid #7f8c8d;
+        }
+    </style>
+
+    <script>
+        // 1. 초기 좌표 설정 (왼쪽 상단 출발)
+        var x = 10, y = 10;
+
+        // 2. 페이지 로딩이 완료되면(onload) 실행
+        window.onload = function () {
+
+            // 처음 시작 시 자동차 위치 초기화
+            resetCar();
+
+            // 3. 키보드를 누를 때마다(onkeydown) 실행
+            window.onkeydown = function (e) {
+                // 방향키 입력 시 화면이 스크롤되는 현상 방지
+                if ([37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+                    e.preventDefault();
+                }
+
+                // 37:Left, 38:Up, 39:Right, 40:Down (제공해주신 코드 활용)
+                switch (e.keyCode) {
+                    case 37: x -= 15; break; // 왼쪽
+                    case 38: y -= 15; break; // 위쪽
+                    case 39: x += 15; break; // 오른쪽
+                    case 40: y += 15; break; // 아래쪽
+                }
+
+                // 변경된 좌표를 자동차(DOM)에 반영
+                var car = document.getElementById("car");
+                car.style.left = x + "px";
+                car.style.top = y + "px";
+
+                // 충돌 검사 실행
+                checkCollision();
+            };
+        };
+
+        // 자동차를 처음 시작점(왼쪽 상단)으로 되돌리는 함수
+        function resetCar() {
+            x = 10;
+            y = 10;
+            var car = document.getElementById("car");
+            car.style.left = x + "px";
+            car.style.top = y + "px";
+        }
+
+        // 장애물과 충돌했는지 체크하는 함수 (박스 충돌 개념 적용)
+        function checkCollision() {
+            var car = document.getElementById("car");
+            var obstacles = document.getElementsByClassName("obstacle");
+
+            // 자동차의 현재 사각형 영역 구하기
+            var carRect = car.getBoundingClientRect();
+
+            for (var i = 0; i < obstacles.length; i++) {
+                var obsRect = obstacles[i].getBoundingClientRect();
+
+                // 자동차와 장애물의 영역이 겹치는지 계산 (충돌 조건)
+                if (carRect.left < obsRect.right &&
+                    carRect.right > obsRect.left &&
+                    carRect.top < obsRect.bottom &&
+                    carRect.bottom > obsRect.top) {
+
+                    // 충돌 시 즉시 알림창을 띄우고 리셋
+                    alert("💥 장애물에 부딪혔습니다! 다시 출발하세요!");
+                    resetCar();
+                    break; // 한 번 부딪히면 반복문 종료
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="info-panel">
+        <strong>조작법:</strong> 키보드 방향키 (◀ ▲ ▶ ▼)
+    </div>
+
+    <div id="car">🚗</div>
+
+    <div class="obstacle tree" style="left: 200px; top: 50px; width: 80px; height: 80px;">🌳</div>
+
+    <div class="obstacle building" style="left: 150px; top: 250px; width: 120px; height: 150px;">🏢</div>
+
+    <div class="obstacle tree" style="left: 450px; top: 180px; width: 90px; height: 90px;">🌳</div>
+
+    <div class="obstacle building" style="left: 380px; top: 400px; width: 160px; height: 120px;">🏢</div>
+
+</body>
+
+</html>
