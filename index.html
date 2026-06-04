@@ -1,121 +1,44 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>인터넷활용 실습 템플릿</title>
   <link rel="stylesheet" href="t.css">
-  
- <style>
-    #target {
-      display: inline-block;
-      padding: 10px 20px;
-      border: 2px solid #ddd;
-      border-radius: 8px
-      margin: 10px 0;
-      transition: all 0.3s ease;
-    }
-    
-    .btn-container {
-      margin-top: 10px;
-      margin-bottom: 15px;
-    }
-    
-    button {
-      padding: 6px 12px;
-      font-size: 13px;
-      margin: 3px;
-      cursor: pointer;
-      background-color: #f8f9fa;
-      border: 1px solid #dbdbdb;
-      border-radius: 4px;
-      color: #4a4a4a;
-      transition: all 0.2s;
-    }
-    
-    button:hover {
-      background-color: #b5c0d0;
-      border-color: #a5b0c0;
-      color: #333;
-    }
-  </style>
-
-<script>
-    function changeColor() {
-        var obj = document.getElementById("target");
-        if (obj.style.color === "rgb(30, 58, 138)" || obj.style.color === "navy") {
-            obj.style.color = "";
-        } else {
-            obj.style.color = "#1e3a8a";
-        }
-    }
-
-    function changeSize() {
-        var obj = document.getElementById("target");
-        if (obj.style.fontSize === "24px") {
-            obj.style.fontSize = "";
-        } else {
-            obj.style.fontSize = "24px";
-        }
-    }
-
-    function changeBackground() {
-        var obj = document.getElementById("target");
-        if (obj.style.backgroundColor === "rgb(224, 231, 255)" || obj.style.backgroundColor === "rgb(224, 231, 255)") {
-            obj.style.backgroundColor = "";
-        } else {
-            obj.style.backgroundColor = "#e0e7ff";
-        }
-    }
-
-    function toggleVisibility() {
-        var obj = document.getElementById("target");
-        if (obj.style.visibility === "hidden") {
-            obj.style.visibility = "visible";
-        } else {
-            obj.style.visibility = "hidden";
-        }
-    }
-  </script>
 </head>
+
 <body>
 
-<header>
-  <h1 id="target">상은</h1>
-  
-  <div class="btn-container">
-    <button onclick="changeColor()">글자색 변경</button>
-    <button onclick="changeSize()">크게 보기</button>
-    <button onclick="changeBackground()">배경 강조</button>
-    <button onclick="toggleVisibility()">숨기기/보이기</button>
-  </div>
-  
-  <p class="subtitle">한 줄 소개: (여기에 추가)</p>
-</header>
+  <header>
+    <h1>상은</h1>
+    <p class="subtitle">배움과 성장을 기록하는 공간입니다.</p>
+  </header>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="portfolio.html">Portfolio</a>
-  <a href="contact.html">Contact</a>
-</nav>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-<main class="container">
-<section>
-  <h2>홈</h2>
-  <p>안녕하세요! 저는 <strong>상은</strong> 입니다.</p>
-  <ul>
-    <li>학과/학번: 법학부/2022803035</li>
-    <li>관심 분야: (여기에 추가)</li>
-    <li>기술 스택(예: HTML, CSS, JS): (여기에 추가)</li>
-  </ul>
-</section>
-</main>
+  <main class="container">
+    <section>
+      <h2>홈</h2>
+      <p>안녕하세요! 저는 <strong>상은</strong> 입니다.</p>
+      <ul>
+        <li>학과/학번: 법학부/2022803035</li>
+        <li>관심 분야: (여기에 추가)</li>
+        <li>기술 스택(예: HTML, CSS, JS): (여기에 추가)</li>
+      </ul>
+    </section>
+  </main>
 
-<footer>
-  <small>&copy; <span id="year"></span> 이름: 상은</small>
-</footer>
+  <footer>
+    <small>&copy; <span id="year"></span> 이름: 상은</small>
+  </footer>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
